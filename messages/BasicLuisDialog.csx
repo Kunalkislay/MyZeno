@@ -29,7 +29,7 @@ public class BasicLuisDialog : LuisDialog<object>
     {
 
         
-        await context.PostAsync($"You have reached the GetDoctors Hello intent. You said: {Utils.GetAppSetting("LuisAppId")}"); //
+        await context.PostAsync($"You have reached the GetDoctors Hello intent. You said: { JsonConvert.SerializeObject(result)}"); //
         
         
         context.Wait(MessageReceived);
