@@ -1,10 +1,11 @@
 using System;
 using System.Threading.Tasks;
-
+using Newtonsoft.Json;
 using Microsoft.Bot.Builder.Azure;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
+
 
 // For more information about this template visit http://aka.ms/azurebots-csharp-luis
 [Serializable]
@@ -26,7 +27,9 @@ public class BasicLuisDialog : LuisDialog<object>
     [LuisIntent("GetDoctors")]
     public async Task MyIntent(IDialogContext context, LuisResult result)
     {
-        await context.PostAsync($"You have reached the GetDoctors Intent intent. You said: {result.Query}"); //
+
+        
+        await context.PostAsync($"You have reached the GetDoctors and What Intent intent. You said: {result.Query}"); //
         
         
         context.Wait(MessageReceived);

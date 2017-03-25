@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\messages",
+    "\\PostDeployScripts"
   ],
-  "SelectedNode": "\\Intents.cs",
+  "SelectedNode": "\\messages\\BasicLuisDialog.csx",
   "PreviewInSolutionExplorer": false
 }
