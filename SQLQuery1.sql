@@ -1,0 +1,1 @@
+﻿select TOP 5  Id,EventID, TypeLIC,Description, StartDate, EndDate,statusLIC, OwnedBy from dbo.EMS_ACTIVITY
