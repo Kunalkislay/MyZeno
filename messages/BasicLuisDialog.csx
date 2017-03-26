@@ -34,7 +34,7 @@ public class BasicLuisDialog : LuisDialog<object>
     {
 
 
-        IMessageActivity message;
+        IMessageActivity message = null;
         message.Attachments.Add(new Attachment()
         {
             ContentUrl = "https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png",
