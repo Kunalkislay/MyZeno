@@ -36,7 +36,7 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
             {
                 case ActivityTypes.Message:
                     log.Info($"Message!");
-               
+                    var client = new ConnectorClient(new Uri(activity.ServiceUrl));
                     activity.Attachments.Add(new Attachment()
                     {
                         ContentUrl = "http://aihelpwebsite.com/portals/0/Images/AIHelpWebsiteLogo_Large.png",
