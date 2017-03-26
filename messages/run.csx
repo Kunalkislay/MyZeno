@@ -36,7 +36,7 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
             {
                 case ActivityTypes.Message:
                     log.Info($"Message!");
-                    var client = new ConnectorClient(new Uri(activity.ServiceUrl));
+                    var myclient = new ConnectorClient(new Uri(activity.ServiceUrl));
                     activity.Attachments.Add(new Attachment()
                     {
                         ContentUrl = "http://aihelpwebsite.com/portals/0/Images/AIHelpWebsiteLogo_Large.png",
@@ -44,7 +44,7 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
                         Name = "AIHelpWebsiteLogo_Large.png"
                     });
                     var replyMessage = activity.CreateReply();
-                    await client.Conversations.ReplyToActivityAsync(replyMessage);
+                    await myclient.Conversations.ReplyToActivityAsync(replyMessage);
                     //await Conversation.SendAsync(activity, () => new BasicLuisDialog());
                     break;
                 case ActivityTypes.ConversationUpdate:
