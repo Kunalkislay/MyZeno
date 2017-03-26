@@ -25,7 +25,7 @@ public class BasicLuisDialog : LuisDialog<object>
     // Go to https://luis.ai and create a new intent, then train/publish your luis app.
     // Finally replace "MyIntent" with the name of your newly created intent in the following handler
     [LuisIntent("GetActivities")]
-    public async Task GetActivtiesIntent(IDialogContext context, LuisResult result)
+    public async Task MyIntent(IDialogContext context, LuisResult result)
     {
 
         
