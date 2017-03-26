@@ -41,11 +41,15 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
                 case ActivityTypes.ConversationUpdate:
                     log.Info($"Message1!");
                     var client = new ConnectorClient(new Uri(activity.ServiceUrl));
+                    log.Info($"Message2!");
                     IConversationUpdateActivity update = activity;
+                    log.Info($"Message3!");
                     if (update.MembersAdded.Any())
                     {
-                        var reply = activity.CreateReply();
+                        log.Info($"Message4!");
+                        var reply = activity.CreateReply(); log.Info($"Message1!");
                         var newMembers = update.MembersAdded?.Where(t => t.Id != activity.Recipient.Id);
+                        log.Info($"Message5!");
                         foreach (var newMember in newMembers)
                         {
                             reply.Text = "Welcome";
@@ -54,7 +58,9 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
                                 reply.Text += $" {newMember.Name}";
                             }
                             reply.Text += "!";
+                            log.Info($"Message6!");
                             await client.Conversations.ReplyToActivityAsync(reply);
+                            log.Info($"Message7!");
                         }
                     }
                     break;
