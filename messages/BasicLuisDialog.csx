@@ -13,6 +13,7 @@ public class BasicLuisDialog : LuisDialog<object>
 {
     public BasicLuisDialog() : base(new LuisService(new LuisModelAttribute(Utils.GetAppSetting("LuisAppId"), Utils.GetAppSetting("LuisAPIKey"))))
     {
+        log.Info($"Initialized");
     }
 
     [LuisIntent("None")]
