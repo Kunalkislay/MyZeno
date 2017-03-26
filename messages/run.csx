@@ -43,8 +43,8 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
                         ContentType = "image/png",
                         Name = "AIHelpWebsiteLogo_Large.png"
                     });
-                    var reply = activity.CreateReply();
-                    await client.Conversations.ReplyToActivityAsync(reply);
+                    var replyMessage = activity.CreateReply();
+                    await client.Conversations.ReplyToActivityAsync(replyMessage);
                     //await Conversation.SendAsync(activity, () => new BasicLuisDialog());
                     break;
                 case ActivityTypes.ConversationUpdate:
