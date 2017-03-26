@@ -33,8 +33,14 @@ public class BasicLuisDialog : LuisDialog<object>
     {
 
 
-        
-        await context.PostAsync($"Data sent"); //
+        IMessageActivity message = new IMessageActivity();
+        message.Attachments.Add(new Attachment()
+        {
+            ContentUrl = "https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png",
+            ContentType = "image/png",
+            Name = "Bender_Rodriguez.png"
+        });
+        await context.PostAsync(message); //
         
         
         context.Wait(MessageReceived);
