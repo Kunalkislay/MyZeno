@@ -41,7 +41,7 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
                 case ActivityTypes.ConversationUpdate:
                     log.Info($"Message1!");
                     var client = new ConnectorClient(new Uri(activity.ServiceUrl));
-                    log.Info($"Message2!");
+                    log.Info($"{activity.ServiceUrl}");
                     IConversationUpdateActivity update = activity;
                     log.Info($"Message3!");
                     if (update.MembersAdded.Any())

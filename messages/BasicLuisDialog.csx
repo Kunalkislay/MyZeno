@@ -15,8 +15,7 @@ public class BasicLuisDialog : LuisDialog<object>
     public BasicLuisDialog(TraceWriter log) : base(new LuisService(new LuisModelAttribute(Utils.GetAppSetting("LuisAppId"), Utils.GetAppSetting("LuisAPIKey"))))
     {
         _log = log;
-
-        log.Info($"{new LuisModelAttribute(Utils.GetAppSetting("LuisAppId")}");
+     
     }
 
     [LuisIntent("None")]
