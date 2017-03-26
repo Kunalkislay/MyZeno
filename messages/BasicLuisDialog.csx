@@ -32,10 +32,17 @@ public class BasicLuisDialog : LuisDialog<object>
     public async Task MyIntent(IDialogContext context, LuisResult result)
     {
 
-         
-       
 
-        await context.PostAsync($"You have reached the GetDoctors Hello intent. You said: { JsonConvert.SerializeObject(result)}"); //
+
+        var reply = activity.CreateReply();
+        replyMessage.Attachments.Add(new Attachment()
+        {
+            ContentUrl = "https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png",
+            ContentType = "image/png",
+            Name = "Bender_Rodriguez.png"
+        });
+
+        await context.PostAsync(reply); //
         
         
         context.Wait(MessageReceived);
