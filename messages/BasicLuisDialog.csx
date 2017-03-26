@@ -35,7 +35,7 @@ public class BasicLuisDialog : LuisDialog<object>
 
 
         var reply = activity.CreateReply();
-        replyMessage.Attachments.Add(new Attachment()
+        reply.Attachments.Add(new Attachment()
         {
             ContentUrl = "https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png",
             ContentType = "image/png",
