@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\messages",
+    "\\Model",
     "\\PostDeployScripts"
   ],
   "SelectedNode": "\\messages\\BasicLuisDialog.csx",
