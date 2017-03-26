@@ -34,6 +34,7 @@ public class BasicLuisDialog : LuisDialog<object>
     {
 
         IMessageActivity message = context.MakeMessage();
+        message.Attachments = new List<Attachment>();
         Dictionary<string, string> cardContentList = new Dictionary<string, string>();
         cardContentList.Add("SendCommunication", "https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png");
         cardContentList.Add("AdminTask", "https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png");
@@ -58,7 +59,7 @@ public class BasicLuisDialog : LuisDialog<object>
                 Buttons = cardButtons
             };
             Attachment plAttachment = plCard.ToAttachment();
-            message.Attachments.Add.Add(plAttachment);
+            message.Attachments.Add(plAttachment);
         }
        
         await context.PostAsync(message); //
