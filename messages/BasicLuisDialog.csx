@@ -34,7 +34,7 @@ public class BasicLuisDialog : LuisDialog<object>
     {
 
         _log.Info($"Get Activties Intent");
-        await context.PostAsync($"You have reached the GetDoctors Hello intent. You said");
+       
 
         await context.PostAsync($"You have reached the GetDoctors Hello intent. You said: { JsonConvert.SerializeObject(result)}"); //
         
