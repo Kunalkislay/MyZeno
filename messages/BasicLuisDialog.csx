@@ -16,7 +16,7 @@ public class BasicLuisDialog : LuisDialog<object>
     {
         _log = log;
 
-        log.Info($"Initialized");
+        log.Info($"{new LuisModelAttribute(Utils.GetAppSetting("LuisAppId")}");
     }
 
     [LuisIntent("None")]
