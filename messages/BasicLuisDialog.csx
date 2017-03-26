@@ -19,6 +19,7 @@ public class BasicLuisDialog : LuisDialog<object>
     [LuisIntent("None")]
     public async Task NoneIntent(IDialogContext context, LuisResult result)
     {
+        log.Info($"None Intent");
         await context.PostAsync($"You have reached the none intent. You said: {result.Query}"); //
         context.Wait(MessageReceived);
     }
@@ -28,6 +29,8 @@ public class BasicLuisDialog : LuisDialog<object>
     [LuisIntent("GetActivities")]
     public async Task MyIntent(IDialogContext context, LuisResult result)
     {
+
+        log.Info($"Get Activties Intent");
         await context.PostAsync($"You have reached the GetDoctors Hello intent. You said");
 
         await context.PostAsync($"You have reached the GetDoctors Hello intent. You said: { JsonConvert.SerializeObject(result)}"); //
