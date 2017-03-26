@@ -36,13 +36,16 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
             {
                 case ActivityTypes.Message:
                     log.Info($"Message!");
+               
                     activity.Attachments.Add(new Attachment()
                     {
                         ContentUrl = "http://aihelpwebsite.com/portals/0/Images/AIHelpWebsiteLogo_Large.png",
                         ContentType = "image/png",
                         Name = "AIHelpWebsiteLogo_Large.png"
                     });
-                    await Conversation.SendAsync(activity, () => new BasicLuisDialog());
+                    var reply = activity.CreateReply();
+                    await client.Conversations.ReplyToActivityAsync(reply);
+                    //await Conversation.SendAsync(activity, () => new BasicLuisDialog());
                     break;
                 case ActivityTypes.ConversationUpdate:
                     log.Info($"Message1!");
