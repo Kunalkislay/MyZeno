@@ -42,7 +42,7 @@ public class BasicLuisDialog : LuisDialog<object>
             Name = "Bender_Rodriguez.png"
         });
 
-        await context.PostAsync(reply); //
+        await context.PostAsync($"{ reply} "); //
         
         
         context.Wait(MessageReceived);
