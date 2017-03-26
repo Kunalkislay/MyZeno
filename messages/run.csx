@@ -36,7 +36,7 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
             {
                 case ActivityTypes.Message:
                     log.Info($"Message!");
-                    await Conversation.SendAsync(activity, () => new BasicLuisDialog(log));
+                    await Conversation.SendAsync(activity, () => new BasicLuisDialog());
                     break;
                 case ActivityTypes.ConversationUpdate:
                     log.Info($"Message1!");

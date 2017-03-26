@@ -11,17 +11,17 @@ using Microsoft.Bot.Builder.Luis.Models;
 [Serializable]
 public class BasicLuisDialog : LuisDialog<object>
 {
-    TraceWriter _log; 
-    public BasicLuisDialog(TraceWriter log) : base(new LuisService(new LuisModelAttribute(Utils.GetAppSetting("LuisAppId"), Utils.GetAppSetting("LuisAPIKey"))))
+     
+    public BasicLuisDialog( ) : base(new LuisService(new LuisModelAttribute(Utils.GetAppSetting("LuisAppId"), Utils.GetAppSetting("LuisAPIKey"))))
     {
-        _log = log;
+        
      
     }
 
     [LuisIntent("None")]
     public async Task NoneIntent(IDialogContext context, LuisResult result)
     {
-        _log.Info($"None Intent");
+         
         await context.PostAsync($"You have reached the none intent. You said: {result.Query}"); //
         context.Wait(MessageReceived);
     }
@@ -32,7 +32,7 @@ public class BasicLuisDialog : LuisDialog<object>
     public async Task MyIntent(IDialogContext context, LuisResult result)
     {
 
-        _log.Info($"Get Activties Intent");
+         
        
 
         await context.PostAsync($"You have reached the GetDoctors Hello intent. You said: { JsonConvert.SerializeObject(result)}"); //
