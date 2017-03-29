@@ -3,7 +3,8 @@
     "",
     "\\messages",
     "\\Model",
-    "\\PostDeployScripts"
+    "\\PostDeployScripts",
+    "\\Silverline"
   ],
   "SelectedNode": "\\messages\\BasicLuisDialog.csx",
   "PreviewInSolutionExplorer": false

@@ -35,6 +35,7 @@ public class BasicLuisDialog : LuisDialog<object>
 
         IMessageActivity message = context.MakeMessage();
         message.Attachments = new List<Attachment>();
+        message.AttachmentLayout = "carousel";
         Dictionary<string, string> cardContentList = new Dictionary<string, string>();
         cardContentList.Add("SendCommunication", "https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png");
         cardContentList.Add("AdminTask", "https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png");
